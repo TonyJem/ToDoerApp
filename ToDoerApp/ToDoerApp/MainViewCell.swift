@@ -7,7 +7,6 @@ class MainViewCell: UICollectionViewCell {
     // MARK: - Views
     private let testView: UIView = {
         let view = UIView()
-        view.backgroundColor = .green
         
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
