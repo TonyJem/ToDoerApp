@@ -12,14 +12,7 @@ class MainViewController: UIViewController {
     }()
     
     private let mainView = MainView()
-    
-    private let footerView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .gray
-        
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
+    private let footerView = FooterView()
     
     // MARK: - LifeCycle
     override func viewDidLoad() {

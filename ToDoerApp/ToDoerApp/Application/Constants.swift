@@ -13,5 +13,8 @@ struct Constants {
         
         static let dateViewWidthMultiplier: CGFloat = 0.25
         static let dateViewHeightMultiplier: CGFloat = 6/7
+        
+        static let horizontalInset: CGFloat = 20.0
+        static let buttonHeight: CGFloat = 40.0
     }
 }
