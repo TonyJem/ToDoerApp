@@ -2,11 +2,14 @@ import UIKit
 
 class MainView: UIView {
     
+    private let mainViewCellIdentifier = "idMainViewCell"
+    
     // MARK: - Views
     private let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let collectionVIew = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionVIew.backgroundColor = .white
+        
         collectionVIew.translatesAutoresizingMaskIntoConstraints = false
         return collectionVIew
     }()
@@ -19,6 +22,7 @@ class MainView: UIView {
         setConstraints()
         setDelegates()
         
+        collectionView.register(MainViewCell.self, forCellWithReuseIdentifier: mainViewCellIdentifier)
     }
     
     required init?(coder: NSCoder) {
@@ -33,10 +37,33 @@ class MainView: UIView {
     }
     
     private func setDelegates() {
-        
+        collectionView.dataSource = self
+        collectionView.delegate = self
     }
 }
 
+// MARK: - CollectionView DataSource
+extension MainView: UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 888
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: mainViewCellIdentifier, for: indexPath) as! MainViewCell
+        
+        let color: UIColor = indexPath.row % 2 == 0 ? .red : .blue
+        cell.setupBackground(color: color)
+        
+        return cell
+    }
+}
+
+// MARK: - CollectionView Delegate
+extension MainView: UICollectionViewDelegate {
+    
+}
 
 // MARK: - SetConstraints
 extension MainView {

@@ -24,6 +24,10 @@ class MainViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func setupBackground(color: UIColor) {
+        testView.backgroundColor = color
+    }
+    
     // MARK: - Private Methods
     private func setupViews() {
         addSubview(testView)
