@@ -2,11 +2,6 @@ import UIKit
 
 class MainViewController: UIViewController {
     
-//    enum LayoutConstants {
-//        static let headerHeightMultiplier: CGFloat = 0.075
-//        static let footerHeightMultiplier: CGFloat = 0.04375
-//    }
-    
     // MARK: - Views
     private let headerView: UIView = {
         let view = UIView()
