@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3A56E5E927F80B8E0094E79A /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A56E5E827F80B8E0094E79A /* MainView.swift */; };
 		3A56E5EB27F80F640094E79A /* MainViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A56E5EA27F80F640094E79A /* MainViewCell.swift */; };
+		3A56E5ED27F8592C0094E79A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A56E5EC27F8592C0094E79A /* Constants.swift */; };
 		3A960A7F27F761D1008F9A01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A960A7E27F761D1008F9A01 /* AppDelegate.swift */; };
 		3A960A8127F761D1008F9A01 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A960A8027F761D1008F9A01 /* SceneDelegate.swift */; };
 		3A960A8327F761D1008F9A01 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A960A8227F761D1008F9A01 /* MainViewController.swift */; };
@@ -19,6 +20,7 @@
 /* Begin PBXFileReference section */
 		3A56E5E827F80B8E0094E79A /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		3A56E5EA27F80F640094E79A /* MainViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewCell.swift; sourceTree = "<group>"; };
+		3A56E5EC27F8592C0094E79A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3A960A7B27F761D1008F9A01 /* ToDoerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A960A7E27F761D1008F9A01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A960A8027F761D1008F9A01 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -54,6 +56,7 @@
 			children = (
 				3A960A7E27F761D1008F9A01 /* AppDelegate.swift */,
 				3A960A8027F761D1008F9A01 /* SceneDelegate.swift */,
+				3A56E5EC27F8592C0094E79A /* Constants.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -161,6 +164,7 @@
 				3A56E5E927F80B8E0094E79A /* MainView.swift in Sources */,
 				3A960A7F27F761D1008F9A01 /* AppDelegate.swift in Sources */,
 				3A960A8127F761D1008F9A01 /* SceneDelegate.swift in Sources */,
+				3A56E5ED27F8592C0094E79A /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
