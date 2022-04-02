@@ -11,5 +11,7 @@ struct Constants {
         
         static private let footerHeightMultiplier: CGFloat = 0.04375
         static let footerViewHeight = screenHeight * footerHeightMultiplier
+        
+        static let mainViewHeight = screenHeight - headerViewHeight - footerViewHeight
     }
 }
