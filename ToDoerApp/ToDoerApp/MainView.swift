@@ -8,11 +8,13 @@ class MainView: UIView {
         layout.scrollDirection = .horizontal
         layout.minimumLineSpacing = Constants.Layout.minimumLineSpacing
         
-        let collectionVIew = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionVIew.backgroundColor = .white
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.backgroundColor = .white
+        collectionView.showsVerticalScrollIndicator = false
+        collectionView.showsHorizontalScrollIndicator = false
         
-        collectionVIew.translatesAutoresizingMaskIntoConstraints = false
-        return collectionVIew
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        return collectionView
     }()
     
     // MARK: - Init
