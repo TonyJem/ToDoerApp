@@ -2,10 +2,10 @@ import UIKit
 
 class MainViewController: UIViewController {
     
-    enum LayoutConstants {
-        static let headerHeightMultiplier: CGFloat = 0.075
-        static let footerHeightMultiplier: CGFloat = 0.04375
-    }
+//    enum LayoutConstants {
+//        static let headerHeightMultiplier: CGFloat = 0.075
+//        static let footerHeightMultiplier: CGFloat = 0.04375
+//    }
     
     // MARK: - Views
     private let headerView: UIView = {
@@ -50,16 +50,14 @@ extension MainViewController {
             headerView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
             headerView.topAnchor.constraint(equalTo: view.topAnchor),
             headerView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            headerView.heightAnchor.constraint(equalTo: view.heightAnchor,
-                                               multiplier: LayoutConstants.headerHeightMultiplier)
+            headerView.heightAnchor.constraint(equalToConstant: Constants.Layout.headerViewHeight)
         ])
         
         NSLayoutConstraint.activate([
             footerView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
             footerView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             footerView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            footerView.heightAnchor.constraint(equalTo: view.heightAnchor,
-                                               multiplier: LayoutConstants.footerHeightMultiplier)
+            footerView.heightAnchor.constraint(equalToConstant: Constants.Layout.footerViewHeight)
         ])
         
         NSLayoutConstraint.activate([
