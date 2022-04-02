@@ -12,6 +12,7 @@ class MainView: UIView {
         collectionView.backgroundColor = .white
         collectionView.showsVerticalScrollIndicator = false
         collectionView.showsHorizontalScrollIndicator = false
+        collectionView.isPagingEnabled = true
         
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         return collectionView
