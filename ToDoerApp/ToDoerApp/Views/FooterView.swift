@@ -7,8 +7,15 @@ class FooterView: UIView {
         let button = UIButton()
         button.setTitle("Today", for: .normal)
         button.tintColor = .white
-        button.backgroundColor = .clear
         button.addTarget(self, action: #selector(todayButtonDidTap), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    private lazy var showCalendarsButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(named: "show_calendars_18"), for: .normal)
+        button.addTarget(self, action: #selector(showCalendarsButtonDidTap), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -33,9 +40,14 @@ class FooterView: UIView {
         print("🟢 todayButtonDidTap in FooterView")
     }
     
+    @objc private func showCalendarsButtonDidTap() {
+        print("🟢🟢 showCalendarsButtonDidTap in FooterView")
+    }
+    
     // MARK: - Private Methods
     private func setupViews() {
         addSubview(todayButton)
+        addSubview(showCalendarsButton)
     }
 }
 
@@ -47,6 +59,13 @@ extension FooterView {
                                                  constant: Constants.Layout.horizontalInset),
             todayButton.centerYAnchor.constraint(equalTo: centerYAnchor),
             todayButton.heightAnchor.constraint(equalToConstant: Constants.Layout.buttonHeight)
+        ])
+        
+        NSLayoutConstraint.activate([
+            showCalendarsButton.trailingAnchor.constraint(equalTo: trailingAnchor,
+                                                          constant: -1.5 * Constants.Layout.horizontalInset),
+            showCalendarsButton.centerYAnchor.constraint(equalTo: centerYAnchor),
+            showCalendarsButton.heightAnchor.constraint(equalToConstant: Constants.Layout.buttonHeight)
         ])
     }
 }
