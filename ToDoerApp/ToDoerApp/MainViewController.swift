@@ -16,13 +16,7 @@ class MainViewController: UIViewController {
         return view
     }()
     
-    private let mainView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .white
-        
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
+    private let mainView: UIView = MainView()
     
     private let footerView: UIView = {
         let view = UIView()
