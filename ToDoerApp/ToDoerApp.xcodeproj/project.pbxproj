@@ -61,6 +61,23 @@
 			path = Application;
 			sourceTree = "<group>";
 		};
+		3A56E5EE27F88EA90094E79A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3A960A8227F761D1008F9A01 /* MainViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		3A56E5EF27F88ECB0094E79A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3A56E5E827F80B8E0094E79A /* MainView.swift */,
+				3A56E5EA27F80F640094E79A /* MainViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		3A960A7227F761D1008F9A01 = {
 			isa = PBXGroup;
 			children = (
@@ -81,9 +98,8 @@
 			isa = PBXGroup;
 			children = (
 				3A41B2F527F7720800DACE6B /* Application */,
-				3A960A8227F761D1008F9A01 /* MainViewController.swift */,
-				3A56E5E827F80B8E0094E79A /* MainView.swift */,
-				3A56E5EA27F80F640094E79A /* MainViewCell.swift */,
+				3A56E5EF27F88ECB0094E79A /* Views */,
+				3A56E5EE27F88EA90094E79A /* Controllers */,
 				3A41B2F427F771DD00DACE6B /* Resources */,
 			);
 			path = ToDoerApp;
