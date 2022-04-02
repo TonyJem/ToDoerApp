@@ -1,48 +1,28 @@
 import UIKit
 
-class MainView: UIView {
+final class MainView: UICollectionView {
     
-    // MARK: - Views
-    private let collectionView: UICollectionView = {
+    // MARK: - Init
+    init() {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         layout.minimumLineSpacing = Constants.Layout.minimumLineSpacing
+        super.init(frame: .zero, collectionViewLayout: layout)
         
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.backgroundColor = .white
-        collectionView.showsVerticalScrollIndicator = false
-        collectionView.showsHorizontalScrollIndicator = false
-        collectionView.isPagingEnabled = true
+        backgroundColor = .white
+        isPagingEnabled = true
+        showsVerticalScrollIndicator = false
+        showsHorizontalScrollIndicator = false
+        translatesAutoresizingMaskIntoConstraints = false
         
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
-        return collectionView
-    }()
-    
-    // MARK: - Init
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+        dataSource = self
+        delegate = self
         
-        setupViews()
-        setConstraints()
-        setDelegates()
-        
-        collectionView.register(MainViewCell.self, forCellWithReuseIdentifier: MainViewCell.identifier)
+        register(MainViewCell.self, forCellWithReuseIdentifier: MainViewCell.identifier)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    // MARK: - Private Methods
-    private func setupViews() {
-        self.translatesAutoresizingMaskIntoConstraints = false
-        
-        addSubview(collectionView)
-    }
-    
-    private func setDelegates() {
-        collectionView.dataSource = self
-        collectionView.delegate = self
     }
 }
 
@@ -74,18 +54,5 @@ extension MainView: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: frame.width, height: frame.height)
-    }
-}
-
-// MARK: - SetConstraints
-extension MainView {
-    private func setConstraints() {
-        
-        NSLayoutConstraint.activate([
-            collectionView.leftAnchor.constraint(equalTo: leftAnchor),
-            collectionView.topAnchor.constraint(equalTo: topAnchor),
-            collectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: bottomAnchor)
-        ])
     }
 }
