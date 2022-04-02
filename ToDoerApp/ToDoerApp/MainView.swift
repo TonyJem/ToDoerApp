@@ -37,9 +37,6 @@ extension MainView: UICollectionViewDataSource {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainViewCell.identifier, for: indexPath) as! MainViewCell
         
-        let color: UIColor = indexPath.row % 2 == 0 ? .red : .blue
-        cell.setupBackground(color: color)
-        
         return cell
     }
 }
