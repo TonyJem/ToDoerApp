@@ -2,11 +2,11 @@ import UIKit
 
 class MainView: UIView {
     
-    private let mainViewCellIdentifier = "idMainViewCell"
-    
     // MARK: - Views
     private let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        
         let collectionVIew = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionVIew.backgroundColor = .white
         
@@ -22,7 +22,7 @@ class MainView: UIView {
         setConstraints()
         setDelegates()
         
-        collectionView.register(MainViewCell.self, forCellWithReuseIdentifier: mainViewCellIdentifier)
+        collectionView.register(MainViewCell.self, forCellWithReuseIdentifier: MainViewCell.identifier)
     }
     
     required init?(coder: NSCoder) {
@@ -51,7 +51,7 @@ extension MainView: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: mainViewCellIdentifier, for: indexPath) as! MainViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainViewCell.identifier, for: indexPath) as! MainViewCell
         
         let color: UIColor = indexPath.row % 2 == 0 ? .red : .blue
         cell.setupBackground(color: color)

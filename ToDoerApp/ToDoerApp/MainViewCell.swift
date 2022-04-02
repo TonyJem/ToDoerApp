@@ -2,6 +2,8 @@ import UIKit
 
 class MainViewCell: UICollectionViewCell {
     
+    static let identifier = "MainViewCellIdentifier"
+    
     // MARK: - Views
     private let testView: UIView = {
         let view = UIView()

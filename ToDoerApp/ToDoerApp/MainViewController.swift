@@ -16,7 +16,7 @@ class MainViewController: UIViewController {
         return view
     }()
     
-    private let mainView: UIView = MainView()
+    private let mainView = MainView()
     
     private let footerView: UIView = {
         let view = UIView()
