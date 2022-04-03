@@ -25,8 +25,7 @@ class BottomTabButton: UIButton {
     }
     
     // MARK: - Public Methods
-    func reloadTabLayer()
-    {
+    func reloadTabLayer() {
         layer.setNeedsDisplay()
         layer.displayIfNeeded()
     }
@@ -34,12 +33,12 @@ class BottomTabButton: UIButton {
 
 // MARK: - Draw shape of Trapezium with rounded corners
 extension BottomTabButton {
-    
     override func draw(_ rect: CGRect) {
         let size = self.bounds.size
         
         let tabWidth = size.width
         let tabHeight = tabModel.isActive ? size.height : size.height - 5
+        
         let k: CGFloat = Constants.TabShape.sideAlignmentProportion
         let radius: CGFloat = Constants.TabShape.tabCornerRadius
         
@@ -76,8 +75,19 @@ extension BottomTabButton {
         let path = UIBezierPath()
         path.move(to: pointA)
         path.addLine(to: pointB)
-        path.addArc(withCenter: rightCenterPoint, radius: radius, startAngle: alfa, endAngle: 0.5 * CGFloat.pi, clockwise: true)
-        path.addArc(withCenter: leftCenterPoint, radius: radius, startAngle: 0.5 * CGFloat.pi, endAngle: CGFloat.pi - alfa, clockwise: true)
+        
+        path.addArc(withCenter: rightCenterPoint,
+                    radius: radius,
+                    startAngle: alfa,
+                    endAngle: 0.5 * CGFloat.pi,
+                    clockwise: true)
+        
+        path.addArc(withCenter: leftCenterPoint,
+                    radius: radius,
+                    startAngle: 0.5 * CGFloat.pi,
+                    endAngle: CGFloat.pi - alfa,
+                    clockwise: true)
+        
         path.close()
         
         tabModel.backgroundColor.set()
