@@ -6,7 +6,7 @@ class FooterView: UIView {
     private lazy var todayButton: UIButton = {
         let button = UIButton()
         button.setTitle("Today", for: .normal)
-        button.tintColor = .white
+        button.setTitleColor(.white, for: .normal)
         button.addTarget(self, action: #selector(todayButtonDidTap), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button

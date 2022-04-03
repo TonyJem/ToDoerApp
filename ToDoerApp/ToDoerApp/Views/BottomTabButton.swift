@@ -10,6 +10,7 @@ class BottomTabButton: UIButton {
         
         backgroundColor = .clear
         setTitle(tabModel.title, for: .normal)
+        setTitleColor(.gray, for: .normal)
         translatesAutoresizingMaskIntoConstraints = false
         addTarget(self, action: #selector(bottomTabButtonDidTap), for: .touchUpInside)
     }
@@ -37,7 +38,7 @@ extension BottomTabButton {
         let size = self.bounds.size
         
         let W = size.width
-        let H = tabModel.isActive ? size.height : size.height - 5
+        let H = tabModel.isActive ? size.height : size.height - 2
         
         let k: CGFloat = Constants.TabShape.sideAlignmentProportion
         let R: CGFloat = Constants.TabShape.tabCornerRadius
