@@ -36,30 +36,31 @@ extension BottomTabButton {
     override func draw(_ rect: CGRect) {
         let size = self.bounds.size
         
-        let tabWidth = size.width
-        let tabHeight = tabModel.isActive ? size.height : size.height - 5
+        let W = size.width
+        let H = tabModel.isActive ? size.height : size.height - 5
         
         let k: CGFloat = Constants.TabShape.sideAlignmentProportion
-        let radius: CGFloat = Constants.TabShape.tabCornerRadius
+        let R: CGFloat = Constants.TabShape.tabCornerRadius
+        let Pi = CGFloat.pi
         
         let Ax: CGFloat = .zero
         let Ay: CGFloat = .zero
         
-        let Ox = Ax + 0.5 * tabWidth
+        let Ox = Ax + 0.5 * W
         let Oy = Ay
         
-        let Bx = Ox + 0.5 * tabWidth
+        let Bx = Ox + 0.5 * W
         let By = Oy
         
         let alfa = atan(k)
-        let beta = 0.5 * CGFloat.pi - alfa
+        let beta = 0.5 * Pi - alfa
         
-        let EF = radius * tan(0.5 * beta)
-        let FG = k * tabHeight
+        let EF = R * tan(0.5 * beta)
+        let FG = k * H
         let EG = EF + FG
         
-        let C1x = Ox + 0.5 * tabWidth - FG - EF
-        let C1y = Oy + tabHeight - radius
+        let C1x = Ox + 0.5 * W - FG - EF
+        let C1y = Oy + H - R
         
         let OB = Bx - Ox
         let OC1x = OB - EG
@@ -67,25 +68,27 @@ extension BottomTabButton {
         let C2x = Ox - OC1x
         let C2y = C1y
         
-        let pointA = CGPoint(x: Ax , y: Ay)
-        let pointB = CGPoint(x: Bx , y: By)
-        let rightCenterPoint = CGPoint(x: C1x , y: C1y)
-        let leftCenterPoint = CGPoint(x: C2x , y: C2y)
+        let A = CGPoint(x: Ax , y: Ay)
+        let B = CGPoint(x: Bx , y: By)
+        let C1 = CGPoint(x: C1x , y: C1y)
+        let C2 = CGPoint(x: C2x , y: C2y)
         
         let path = UIBezierPath()
-        path.move(to: pointA)
-        path.addLine(to: pointB)
         
-        path.addArc(withCenter: rightCenterPoint,
-                    radius: radius,
+        path.move(to: A)
+        
+        path.addLine(to: B)
+        
+        path.addArc(withCenter: C1,
+                    radius: R,
                     startAngle: alfa,
-                    endAngle: 0.5 * CGFloat.pi,
+                    endAngle: 0.5 * Pi,
                     clockwise: true)
         
-        path.addArc(withCenter: leftCenterPoint,
-                    radius: radius,
-                    startAngle: 0.5 * CGFloat.pi,
-                    endAngle: CGFloat.pi - alfa,
+        path.addArc(withCenter: C2,
+                    radius: R,
+                    startAngle: 0.5 * Pi,
+                    endAngle: Pi - alfa,
                     clockwise: true)
         
         path.close()
