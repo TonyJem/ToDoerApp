@@ -20,62 +20,46 @@ class BottomTabView : UIView {
         
         let w = size.width
         let h = size.height
-        let k: CGFloat = 0.15
-        let a = k * h
-        
-        // calculate points coordintes
-        let p1 = self.bounds.origin
-        let p2 = CGPoint(x: p1.x + w, y: p1.y)
-//        let p3 = CGPoint(x: p2.x - a , y: p2.y + h)
-//        let p4 = CGPoint(x: p1.x + a, y: p3.y)
-        
-        
-        // calculate My coordintes:
-        
+        let k: CGFloat = 0.25
         let R: CGFloat = 10.0
         
+        let Ax: CGFloat = .zero
+        let Ay: CGFloat = .zero
+        
+        let Ox = Ax + 0.5 * w
+        let Oy = Ay
+        
+        let Bx = Ox + 0.5 * w
+        let By = Oy
+        
         let alfa = atan(k)
-        let beta = CGFloat.pi/2 - alfa
+        let beta = 0.5 * CGFloat.pi - alfa
         
+        let EF = R * tan(0.5 * beta)
+        let FG = k * h
+        let EG = EF + FG
         
-        let Bx = p2.x
-        let By = p2.y
+        let C1x = Ox + 0.5 * w - FG - EF
+        let C1y = Oy + h - R
         
-        let EH = R * tan(0.5 * beta)
-        let Ex = Bx - a - EH
-        let Ey = By + h
+        let OB = Bx - Ox
+        let OC1x = OB - EG
         
-        let HD = EH
-        let mh = HD * cos(alfa)
-        let HG = HD * sin(alfa)
+        let C2x = Ox - OC1x
+        let C2y = C1y
         
-        let Dx = Bx - a - HG
-        let Dy = Ey - mh
+        let pointA = CGPoint(x: Ax , y: Ay)
+        let pointB = CGPoint(x: Bx , y: By)
+        let pointC1 = CGPoint(x: C1x , y: C1y)
+        let pointC2 = CGPoint(x: C2x , y: C2y)
         
-        let Cx = Ex
-        let Cy = Ey - R
-        
-        let centerPoint = CGPoint(x: Cx-3 , y: Cy)
-        
-        let centerPoint2 = CGPoint(x: Cx-70 , y: Cy)
-        
-        let p3 = CGPoint(x: Dx , y: Dy)
-        let p4 = CGPoint(x: Ex , y: Ey)
-        let p5 = CGPoint(x: p1.x + a , y: Ey)
-        
-        // create the path
         let path = UIBezierPath()
-        path.move(to: p1)
-        path.addLine(to: p2)
-//        path.addLine(to: p3)
-        path.addArc(withCenter: centerPoint, radius: R, startAngle: alfa, endAngle: CGFloat.pi/2, clockwise: true)
-        
-        path.addArc(withCenter: centerPoint2, radius: R, startAngle: CGFloat.pi/2, endAngle: CGFloat.pi - alfa, clockwise: true)
-//        path.addLine(to: p4)
-//        path.addLine(to: p5)
+        path.move(to: pointA)
+        path.addLine(to: pointB)
+        path.addArc(withCenter: pointC1, radius: R, startAngle: alfa, endAngle: 0.5 * CGFloat.pi, clockwise: true)
+        path.addArc(withCenter: pointC2, radius: R, startAngle: 0.5 * CGFloat.pi, endAngle: CGFloat.pi - alfa, clockwise: true)
         path.close()
         
-        // fill the path
         color.set()
         path.fill()
     }
