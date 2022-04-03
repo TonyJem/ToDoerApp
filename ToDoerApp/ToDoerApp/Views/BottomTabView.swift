@@ -2,8 +2,9 @@ import UIKit
 
 class BottomTabView : UIView {
     
-    let color: UIColor = .red
+    var tabBackgroundColor: UIColor = .clear
     
+    // MARK: - Init
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -14,6 +15,15 @@ class BottomTabView : UIView {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
+    
+    // MARK: - Public Methods
+    func setupBackground(color: UIColor) {
+        tabBackgroundColor = color
+    }
+}
+
+// MARK: - Draw shape of Trapezium with rounded corners
+extension BottomTabView {
     
     override func draw(_ rect: CGRect) {
         let size = self.bounds.size
@@ -60,7 +70,7 @@ class BottomTabView : UIView {
         path.addArc(withCenter: leftCenterPoint, radius: radius, startAngle: 0.5 * CGFloat.pi, endAngle: CGFloat.pi - alfa, clockwise: true)
         path.close()
         
-        color.set()
+        tabBackgroundColor.set()
         path.fill()
     }
 }

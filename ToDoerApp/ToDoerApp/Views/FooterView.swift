@@ -48,6 +48,9 @@ class FooterView: UIView {
     
     // MARK: - Private Methods
     private func setupViews() {
+        
+        bottomTabView.setupBackground(color: .green)
+        
         addSubview(todayButton)
         addSubview(bottomTabView)
         addSubview(showCalendarsButton)
