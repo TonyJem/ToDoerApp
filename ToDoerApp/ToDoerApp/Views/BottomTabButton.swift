@@ -2,22 +2,14 @@ import UIKit
 
 class BottomTabButton: UIButton {
     
-    var tabBackgroundColor: UIColor = .clear
-    let tabBackgroundColorForActiveState: UIColor = .white
-    
-    var isActive: Bool = false {
-        didSet {
-            tabBackgroundColor = isActive ? tabBackgroundColorForActiveState : tabBackgroundColor
-            displayNow()
-        }
-    }
+    var tabModel = Tab(title: "JAN", defaultColor: .green)
     
     // MARK: - Init
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         backgroundColor = .clear
-        setTitle("JAN", for: .normal)
+        setTitle(tabModel.title, for: .normal)
         translatesAutoresizingMaskIntoConstraints = false
         addTarget(self, action: #selector(bottomTabButtonDidTap), for: .touchUpInside)
     }
@@ -28,15 +20,12 @@ class BottomTabButton: UIButton {
     
     // MARK: - Actions
     @objc private func bottomTabButtonDidTap() {
-        isActive = !isActive
+        tabModel.isActive = !tabModel.isActive
+        reloadTabLayer()
     }
     
     // MARK: - Public Methods
-    func setupBackground(color: UIColor) {
-        tabBackgroundColor = color
-    }
-    
-    func displayNow()
+    func reloadTabLayer()
     {
         layer.setNeedsDisplay()
         layer.displayIfNeeded()
@@ -50,7 +39,7 @@ extension BottomTabButton {
         let size = self.bounds.size
         
         let tabWidth = size.width
-        let tabHeight = isActive ? size.height : size.height - 5
+        let tabHeight = tabModel.isActive ? size.height : size.height - 5
         let k: CGFloat = Constants.TabShape.sideAlignmentProportion
         let radius: CGFloat = Constants.TabShape.tabCornerRadius
         
@@ -91,7 +80,7 @@ extension BottomTabButton {
         path.addArc(withCenter: leftCenterPoint, radius: radius, startAngle: 0.5 * CGFloat.pi, endAngle: CGFloat.pi - alfa, clockwise: true)
         path.close()
         
-        tabBackgroundColor.set()
+        tabModel.backgroundColor.set()
         path.fill()
     }
 }
