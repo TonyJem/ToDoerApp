@@ -1,35 +1,56 @@
 import UIKit
 
-class BottomTabView : UIView {
+class BottomTabButton: UIButton {
     
     var tabBackgroundColor: UIColor = .clear
+    let tabBackgroundColorForActiveState: UIColor = .white
+    
+    var isActive: Bool = false {
+        didSet {
+            tabBackgroundColor = isActive ? tabBackgroundColorForActiveState : tabBackgroundColor
+            displayNow()
+        }
+    }
     
     // MARK: - Init
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         backgroundColor = .clear
+        setTitle("JAN", for: .normal)
         translatesAutoresizingMaskIntoConstraints = false
+        addTarget(self, action: #selector(bottomTabButtonDidTap), for: .touchUpInside)
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
+    // MARK: - Actions
+    @objc private func bottomTabButtonDidTap() {
+        isActive = !isActive
+    }
+    
     // MARK: - Public Methods
     func setupBackground(color: UIColor) {
         tabBackgroundColor = color
     }
+    
+    func displayNow()
+    {
+        layer.setNeedsDisplay()
+        layer.displayIfNeeded()
+    }
 }
 
 // MARK: - Draw shape of Trapezium with rounded corners
-extension BottomTabView {
+extension BottomTabButton {
     
     override func draw(_ rect: CGRect) {
         let size = self.bounds.size
         
         let tabWidth = size.width
-        let tabHeight = size.height
+        let tabHeight = isActive ? size.height : size.height - 5
         let k: CGFloat = Constants.TabShape.sideAlignmentProportion
         let radius: CGFloat = Constants.TabShape.tabCornerRadius
         
