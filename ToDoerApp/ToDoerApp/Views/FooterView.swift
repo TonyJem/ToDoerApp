@@ -13,6 +13,7 @@ class FooterView: UIView {
     }()
     
     private let bottomTabButton = BottomTabButton()
+    private let bottomTabButton02 = BottomTabButton()
     
     private lazy var showCalendarsButton: UIButton = {
         let button = UIButton()
@@ -51,6 +52,7 @@ class FooterView: UIView {
         
         addSubview(todayButton)
         addSubview(bottomTabButton)
+        addSubview(bottomTabButton02)
         addSubview(showCalendarsButton)
     }
 }
@@ -71,6 +73,14 @@ extension FooterView {
             bottomTabButton.topAnchor.constraint(equalTo: topAnchor),
             bottomTabButton.widthAnchor.constraint(equalToConstant: 100),
             bottomTabButton.heightAnchor.constraint(equalToConstant: 30)
+        ])
+        
+        NSLayoutConstraint.activate([
+            bottomTabButton02.leadingAnchor.constraint(equalTo: todayButton.trailingAnchor,
+                                                 constant: 243),
+            bottomTabButton02.topAnchor.constraint(equalTo: topAnchor),
+            bottomTabButton02.widthAnchor.constraint(equalToConstant: 100),
+            bottomTabButton02.heightAnchor.constraint(equalToConstant: 30)
         ])
         
         NSLayoutConstraint.activate([

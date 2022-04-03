@@ -22,6 +22,9 @@ class BottomTabButton: UIButton {
     // MARK: - Actions
     @objc private func bottomTabButtonDidTap() {
         tabModel.isActive = !tabModel.isActive
+        if tabModel.isActive {
+            superview?.bringSubviewToFront(self)
+        }
         reloadTabLayer()
     }
     
@@ -38,7 +41,7 @@ extension BottomTabButton {
         let size = self.bounds.size
         
         let W = size.width
-        let H = tabModel.isActive ? size.height : size.height - 2
+        let H = tabModel.isActive ? size.height : size.height - 3
         
         let k: CGFloat = Constants.TabShape.sideAlignmentProportion
         let R: CGFloat = Constants.TabShape.tabCornerRadius
