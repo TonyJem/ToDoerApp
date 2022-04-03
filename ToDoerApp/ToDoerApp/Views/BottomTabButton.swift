@@ -2,7 +2,7 @@ import UIKit
 
 class BottomTabButton: UIButton {
     
-    var tabModel = Tab(title: "JAN", defaultColor: .green)
+    var tabModel = Tab(title: "JAN", defaultColor: .tabBackroundMonth01)
     
     // MARK: - Init
     override init(frame: CGRect) {
