@@ -42,9 +42,6 @@ class BottomTab: UIButton {
     private func reloadTabLayer() {
         layer.setNeedsDisplay()
         layer.displayIfNeeded()
-        if tab.isActive {
-            superview?.bringSubviewToFront(self)
-        }
     }
 }
 
@@ -112,5 +109,9 @@ extension BottomTab {
         
         tab.backgroundColor.set()
         path.fill()
+        
+        if tab.isActive {
+            superview?.bringSubviewToFront(self)
+        }
     }
 }

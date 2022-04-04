@@ -6,7 +6,6 @@ class TabPanelView: UIView {
     private let tabApposition = Constants.BottomTabPanel.tabApposition
     
     private var tabViews: [BottomTab] = []
-    private var recentlySelectedTabIndex: Int = 0
     
     private var tabWidth: CGFloat {
         let panelWidth = Constants.BottomTabPanel.width
@@ -48,16 +47,10 @@ class TabPanelView: UIView {
 // MARK: - BottomTab Delegate
 extension TabPanelView: BottomTabDelegate {
     func tabDidSelect(index: Int) {
-        print("🟢 tabDidTap BottomTabDelegate in TabPanelView \(index)")
-        
+        let recentlySelectedTabIndex = model.activeTabIndex
         guard index != recentlySelectedTabIndex else { return }
-        
         model.activateTab(by: index)
         tabViews[index].tab = model.tabs()[index]
-        
-        model.deactivateTabBy(by: recentlySelectedTabIndex)
         tabViews[recentlySelectedTabIndex].tab = model.tabs()[recentlySelectedTabIndex]
-
-        recentlySelectedTabIndex = index
     }
 }
