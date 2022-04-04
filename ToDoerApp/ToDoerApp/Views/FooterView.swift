@@ -12,8 +12,16 @@ class FooterView: UIView {
         return button
     }()
     
-    private let bottomTabButton = BottomTabButton()
-    private let bottomTabButton02 = BottomTabButton()
+    private let tabPanelView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .systemPink
+        
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+//    private let bottomTabButton = BottomTabButton()
+//    private let bottomTabButton02 = BottomTabButton()
     
     private lazy var showCalendarsButton: UIButton = {
         let button = UIButton()
@@ -51,8 +59,9 @@ class FooterView: UIView {
     private func setupViews() {
         
         addSubview(todayButton)
-        addSubview(bottomTabButton)
-        addSubview(bottomTabButton02)
+        addSubview(tabPanelView)
+//        addSubview(bottomTabButton)
+//        addSubview(bottomTabButton02)
         addSubview(showCalendarsButton)
     }
 }
@@ -68,20 +77,29 @@ extension FooterView {
         ])
         
         NSLayoutConstraint.activate([
-            bottomTabButton.leadingAnchor.constraint(equalTo: todayButton.trailingAnchor,
-                                                 constant: 150),
-            bottomTabButton.topAnchor.constraint(equalTo: topAnchor),
-            bottomTabButton.widthAnchor.constraint(equalToConstant: 100),
-            bottomTabButton.heightAnchor.constraint(equalToConstant: 30)
+            tabPanelView.leadingAnchor.constraint(equalTo: leadingAnchor,
+                                                  constant: Constants.TabPanel.horizontalInset),
+            tabPanelView.topAnchor.constraint(equalTo: topAnchor),
+            tabPanelView.trailingAnchor.constraint(equalTo: trailingAnchor,
+                                                   constant: -1 * Constants.TabPanel.horizontalInset),
+            tabPanelView.heightAnchor.constraint(equalToConstant: Constants.TabPanel.height)
         ])
         
-        NSLayoutConstraint.activate([
-            bottomTabButton02.leadingAnchor.constraint(equalTo: todayButton.trailingAnchor,
-                                                 constant: 243),
-            bottomTabButton02.topAnchor.constraint(equalTo: topAnchor),
-            bottomTabButton02.widthAnchor.constraint(equalToConstant: 100),
-            bottomTabButton02.heightAnchor.constraint(equalToConstant: 30)
-        ])
+//        NSLayoutConstraint.activate([
+//            bottomTabButton.leadingAnchor.constraint(equalTo: todayButton.trailingAnchor,
+//                                                 constant: 150),
+//            bottomTabButton.topAnchor.constraint(equalTo: topAnchor),
+//            bottomTabButton.widthAnchor.constraint(equalToConstant: 100),
+//            bottomTabButton.heightAnchor.constraint(equalToConstant: 30)
+//        ])
+        
+//        NSLayoutConstraint.activate([
+//            bottomTabButton02.leadingAnchor.constraint(equalTo: todayButton.trailingAnchor,
+//                                                 constant: 243),
+//            bottomTabButton02.topAnchor.constraint(equalTo: topAnchor),
+//            bottomTabButton02.widthAnchor.constraint(equalToConstant: 100),
+//            bottomTabButton02.heightAnchor.constraint(equalToConstant: 30)
+//        ])
         
         NSLayoutConstraint.activate([
             showCalendarsButton.trailingAnchor.constraint(equalTo: trailingAnchor,

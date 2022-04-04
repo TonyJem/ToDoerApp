@@ -23,4 +23,9 @@ struct Constants {
         static let sideAlignmentProportion: CGFloat = 0.25
         static let tabCornerRadius: CGFloat = 10.0
     }
+    
+    enum TabPanel {
+        static let height: CGFloat = 30.0
+        static let horizontalInset: CGFloat = 130.0
+    }
 }
