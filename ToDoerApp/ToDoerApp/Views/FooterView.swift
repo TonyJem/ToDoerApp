@@ -14,9 +14,6 @@ class FooterView: UIView {
     
     private let tabPanelView = TabPanelView()
     
-//    private let bottomTabButton = BottomTabButton()
-//    private let bottomTabButton02 = BottomTabButton()
-    
     private lazy var showCalendarsButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "show_calendars_18"), for: .normal)
@@ -51,11 +48,8 @@ class FooterView: UIView {
     
     // MARK: - Private Methods
     private func setupViews() {
-        
         addSubview(todayButton)
         addSubview(tabPanelView)
-//        addSubview(bottomTabButton)
-//        addSubview(bottomTabButton02)
         addSubview(showCalendarsButton)
     }
 }
@@ -78,22 +72,6 @@ extension FooterView {
                                                    constant: -1 * Constants.TabPanel.horizontalInset),
             tabPanelView.heightAnchor.constraint(equalToConstant: Constants.TabPanel.height)
         ])
-        
-//        NSLayoutConstraint.activate([
-//            bottomTabButton.leadingAnchor.constraint(equalTo: todayButton.trailingAnchor,
-//                                                 constant: 150),
-//            bottomTabButton.topAnchor.constraint(equalTo: topAnchor),
-//            bottomTabButton.widthAnchor.constraint(equalToConstant: 100),
-//            bottomTabButton.heightAnchor.constraint(equalToConstant: 30)
-//        ])
-        
-//        NSLayoutConstraint.activate([
-//            bottomTabButton02.leadingAnchor.constraint(equalTo: todayButton.trailingAnchor,
-//                                                 constant: 243),
-//            bottomTabButton02.topAnchor.constraint(equalTo: topAnchor),
-//            bottomTabButton02.widthAnchor.constraint(equalToConstant: 100),
-//            bottomTabButton02.heightAnchor.constraint(equalToConstant: 30)
-//        ])
         
         NSLayoutConstraint.activate([
             showCalendarsButton.trailingAnchor.constraint(equalTo: trailingAnchor,
