@@ -3,6 +3,8 @@ import UIKit
 //#colorLiteral()
 
 extension UIColor {
+    static let activeTabBackround: UIColor = .white
+    
     static let tabBackroundMonth01 = #colorLiteral(red: 0.5568627451, green: 0.7110350728, blue: 0.8945692182, alpha: 0.95)
     static let tabBackroundMonth02 = #colorLiteral(red: 0.4309287071, green: 0.7634996772, blue: 0.8501763344, alpha: 0.95)
     static let tabBackroundMonth03 = #colorLiteral(red: 0.4028793275, green: 0.8188094497, blue: 0.7001042962, alpha: 0.95)

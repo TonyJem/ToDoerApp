@@ -1,18 +1,20 @@
 import UIKit
 
 protocol BottomTabDelegate: AnyObject {
-    func tabDidSelect(id: Int)
+    func tabDidSelect(index: Int)
 }
 
 class BottomTab: UIButton {
     
+    let index: Int
     var tab: Tab
     
     weak var bottomTabDelegate: BottomTabDelegate?
     
     // MARK: - Init
-    init(frame: CGRect, tab: Tab) {
+    init(frame: CGRect, tab: Tab, index: Int) {
         self.tab = tab
+        self.index = index
         
         super.init(frame: frame)
         
@@ -31,7 +33,7 @@ class BottomTab: UIButton {
         
 //        tabModel.isActive = true
 //        superview?.bringSubviewToFront(self)
-        bottomTabDelegate?.tabDidSelect(id: tab.id)
+        bottomTabDelegate?.tabDidSelect(index: index)
 //
 //        reloadTabLayer()
         

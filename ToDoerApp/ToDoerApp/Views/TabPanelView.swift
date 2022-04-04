@@ -2,22 +2,7 @@ import UIKit
 
 class TabPanelView: UIView {
     
-    private let tabs: [Tab] = [
-        Tab(id: 0, title: "JAN", defaultColor: .tabBackroundMonth01),
-        Tab(id: 1, title: "FEB", defaultColor: .tabBackroundMonth02),
-        Tab(id: 2, title: "MAR", defaultColor: .tabBackroundMonth03),
-        Tab(id: 3, title: "APR", defaultColor: .tabBackroundMonth04),
-        Tab(id: 4, title: "MAY", defaultColor: .tabBackroundMonth05),
-        Tab(id: 5, title: "JUN", defaultColor: .tabBackroundMonth06),
-        Tab(id: 6, title: "JUL", defaultColor: .tabBackroundMonth07),
-        Tab(id: 7, title: "AUG", defaultColor: .tabBackroundMonth08),
-        Tab(id: 8, title: "SEP", defaultColor: .tabBackroundMonth09),
-        Tab(id: 9, title: "OCT", defaultColor: .tabBackroundMonth10),
-        Tab(id: 10, title: "NOV", defaultColor: .tabBackroundMonth11),
-        Tab(id: 11, title: "DEC", defaultColor: .tabBackroundMonth12)
-    ]
-    
-    private var activeTab = 0
+    var model = tabModel()
     
     // MARK: - Init
     override init(frame: CGRect) {
@@ -36,7 +21,7 @@ class TabPanelView: UIView {
         
         let panelWidth = Constants.BottomTabPanel.width
         let tabApposition = Constants.BottomTabPanel.tabApposition
-        let averageTabWidth = (panelWidth - tabApposition) / CGFloat(tabs.count) + tabApposition
+        let averageTabWidth = (panelWidth - tabApposition) / CGFloat(model.tabCount) + tabApposition
         let defaultTabWidth = Constants.BottomTabPanel.defaultTabWidth
         let tabWidth = min(averageTabWidth, defaultTabWidth)
         
@@ -47,20 +32,21 @@ class TabPanelView: UIView {
                                        y: .zero,
                                        width: tabWidth,
                                        height: Constants.BottomTabPanel.height)
-            let tab = BottomTab(frame: frame, tab: tabs[tabIndex])
-            tab.bottomTabDelegate = self
+            let tab = model.fetchTab(by: tabIndex)
+            let tabView = BottomTab(frame: frame, tab: tab, index: tabIndex)
+            tabView.bottomTabDelegate = self
             
-            addSubview(tab)
+            addSubview(tabView)
             
             tabIndex += 1
             x = x + tabWidth - tabApposition
-        } while tabIndex < tabs.count
+        } while tabIndex < model.tabCount
     }
 }
 
 // MARK: - BottomTab Delegate
 extension TabPanelView: BottomTabDelegate {
-    func tabDidSelect(id: Int) {
-        print("🟢 tabDidTap BottomTabDelegate in TabPanelView \(id)")
+    func tabDidSelect(index: Int) {
+        print("🟢 tabDidTap BottomTabDelegate in TabPanelView \(index)")
     }
 }
