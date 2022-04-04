@@ -15,7 +15,7 @@ struct Tab {
 
 class tabModel {
     
-    private var tabs: [Tab] = [
+    private var tabsDB: [Tab] = [
         Tab(title: "JAN", defaultColor: .tabBackroundMonth01),
         Tab(title: "FEB", defaultColor: .tabBackroundMonth02),
         Tab(title: "MAR", defaultColor: .tabBackroundMonth03),
@@ -30,15 +30,15 @@ class tabModel {
         Tab(title: "DEC", defaultColor: .tabBackroundMonth12)
     ]
     
-    func fetchAllTabs() -> [Tab] {
-        tabs
+    func tabs() -> [Tab] {
+        tabsDB
     }
     
     func activateTab(by index: Int) {
-        tabs[index].isActive = true
+        tabsDB[index].isActive = true
     }
     
     func deactivateTabBy(by index: Int) {
-        tabs[index].isActive = false
+        tabsDB[index].isActive = false
     }
 }

@@ -7,7 +7,12 @@ protocol BottomTabDelegate: AnyObject {
 class BottomTab: UIButton {
     
     let index: Int
-    var tab: Tab
+    
+    var tab: Tab {
+        didSet {
+            reloadTabLayer()
+        }
+    }
     
     weak var bottomTabDelegate: BottomTabDelegate?
     
@@ -30,19 +35,16 @@ class BottomTab: UIButton {
     
     // MARK: - Actions
     @objc private func bottomTabButtonDidTap() {
-        
-//        tabModel.isActive = true
-//        superview?.bringSubviewToFront(self)
         bottomTabDelegate?.tabDidSelect(index: index)
-//
-//        reloadTabLayer()
-        
     }
     
-    // MARK: - Public Methods
-    func reloadTabLayer() {
+    // MARK: - Private Methods
+    private func reloadTabLayer() {
         layer.setNeedsDisplay()
         layer.displayIfNeeded()
+        if tab.isActive {
+            superview?.bringSubviewToFront(self)
+        }
     }
 }
 
