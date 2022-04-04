@@ -12,13 +12,7 @@ class FooterView: UIView {
         return button
     }()
     
-    private let tabPanelView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .systemPink
-        
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
+    private let tabPanelView = TabPanelView()
     
 //    private let bottomTabButton = BottomTabButton()
 //    private let bottomTabButton02 = BottomTabButton()
