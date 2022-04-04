@@ -2,10 +2,12 @@ import UIKit
 
 class BottomTab: UIButton {
     
-    var tabModel = Tab(title: "JAN", defaultColor: .tabBackroundMonth01)
+    var tabModel: Tab
     
     // MARK: - Init
-    override init(frame: CGRect) {
+    init(frame: CGRect, tabModel: Tab) {
+        self.tabModel = tabModel
+        
         super.init(frame: frame)
         
         backgroundColor = .clear
@@ -15,7 +17,7 @@ class BottomTab: UIButton {
     }
     
     required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+        fatalError("init(coder:) has not been implemented")
     }
     
     // MARK: - Actions
