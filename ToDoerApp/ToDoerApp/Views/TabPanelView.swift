@@ -2,8 +2,7 @@ import UIKit
 
 class TabPanelView: UIView {
     
-    private let bottomTab1 = BottomTab()
-    private let bottomTab2 = BottomTab()
+    private let bottomTab = BottomTab()
     
     // MARK: - Init
     override init(frame: CGRect) {
@@ -13,7 +12,6 @@ class TabPanelView: UIView {
         translatesAutoresizingMaskIntoConstraints = false
         
         setupViews()
-        setConstraints()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -22,28 +20,11 @@ class TabPanelView: UIView {
     
     // MARK: - Private Methods
     private func setupViews() {
-        addSubview(bottomTab1)
-        addSubview(bottomTab2)
-    }
-}
-
-// MARK: - SetConstraints
-extension TabPanelView {
-    private func setConstraints() {
         
-        NSLayoutConstraint.activate([
-            bottomTab1.leadingAnchor.constraint(equalTo: leadingAnchor),
-            bottomTab1.topAnchor.constraint(equalTo: topAnchor),
-            bottomTab1.widthAnchor.constraint(equalToConstant: Constants.TabPanel.defaultTabWidth),
-            bottomTab1.bottomAnchor.constraint(equalTo: bottomAnchor)
-        ])
-        
-        NSLayoutConstraint.activate([
-            bottomTab2.leadingAnchor.constraint(equalTo: bottomTab1.trailingAnchor,
-                                                constant: -1 * Constants.TabPanel.tabApposition),
-            bottomTab2.topAnchor.constraint(equalTo: topAnchor),
-            bottomTab2.widthAnchor.constraint(equalToConstant: Constants.TabPanel.defaultTabWidth),
-            bottomTab2.bottomAnchor.constraint(equalTo: bottomAnchor)
-        ])
+        bottomTab.frame = CGRect(x: 0,
+                                 y: 0,
+                                 width: Constants.TabPanel.defaultTabWidth,
+                                 height: Constants.TabPanel.height)
+        addSubview(bottomTab)
     }
 }

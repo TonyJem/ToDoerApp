@@ -9,9 +9,8 @@ class BottomTab: UIButton {
         super.init(frame: frame)
         
         backgroundColor = .clear
-        setTitle(tabModel.title, for: .normal)
         setTitleColor(.gray, for: .normal)
-        translatesAutoresizingMaskIntoConstraints = false
+        setTitle(tabModel.title, for: .normal)
         addTarget(self, action: #selector(bottomTabButtonDidTap), for: .touchUpInside)
     }
     
