@@ -18,29 +18,26 @@ class TabPanelView: UIView {
     
     // MARK: - Private Methods
     private func setupTabs() {
-        
+        let tabs = model.fetchAllTabs()
         let panelWidth = Constants.BottomTabPanel.width
         let tabApposition = Constants.BottomTabPanel.tabApposition
-        let averageTabWidth = (panelWidth - tabApposition) / CGFloat(model.tabCount) + tabApposition
+        let averageTabWidth = (panelWidth - tabApposition) / CGFloat(tabs.count) + tabApposition
         let defaultTabWidth = Constants.BottomTabPanel.defaultTabWidth
         let tabWidth = min(averageTabWidth, defaultTabWidth)
         
-        var tabIndex = 0
         var x: CGFloat = .zero
-        repeat {
+        for (index, tab) in tabs.enumerated() {
+            
             let frame: CGRect = CGRect(x: x,
                                        y: .zero,
                                        width: tabWidth,
                                        height: Constants.BottomTabPanel.height)
-            let tab = model.fetchTab(by: tabIndex)
-            let tabView = BottomTab(frame: frame, tab: tab, index: tabIndex)
+            
+            let tabView = BottomTab(frame: frame, tab: tab, index: index)
             tabView.bottomTabDelegate = self
-            
-            addSubview(tabView)
-            
-            tabIndex += 1
             x = x + tabWidth - tabApposition
-        } while tabIndex < model.tabCount
+            addSubview(tabView)
+        }
     }
 }
 

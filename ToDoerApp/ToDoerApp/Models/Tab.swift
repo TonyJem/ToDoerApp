@@ -30,16 +30,8 @@ class tabModel {
         Tab(title: "DEC", defaultColor: .tabBackroundMonth12)
     ]
     
-    var tabCount: Int {
-        tabs.count
-    }
-    
     func fetchAllTabs() -> [Tab] {
         tabs
-    }
-    
-    func fetchTab(by index: Int) -> Tab {
-        tabs[index]
     }
     
     func activateTab(by index: Int) {
