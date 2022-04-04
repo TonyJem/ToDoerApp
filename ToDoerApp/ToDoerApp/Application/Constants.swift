@@ -3,6 +3,7 @@ import UIKit
 struct Constants {
     enum Layout {
         static let screenHeight = UIScreen.main.bounds.height
+        static let screenWidth = UIScreen.main.bounds.width
         static let minimumLineSpacing: CGFloat = 0.0
         
         static private let headerHeightMultiplier: CGFloat = 0.075
