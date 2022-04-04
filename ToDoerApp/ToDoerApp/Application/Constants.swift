@@ -1,11 +1,12 @@
 import UIKit
 
 struct Constants {
+    
+    static let screenHeight = UIScreen.main.bounds.height
+    static let screenWidth = UIScreen.main.bounds.width
+    
     enum Layout {
-        static let screenHeight = UIScreen.main.bounds.height
-        static let screenWidth = UIScreen.main.bounds.width
         static let minimumLineSpacing: CGFloat = 0.0
-        
         static private let headerHeightMultiplier: CGFloat = 0.075
         static let headerViewHeight = screenHeight * headerHeightMultiplier
         
@@ -25,8 +26,9 @@ struct Constants {
         static let tabCornerRadius: CGFloat = 10.0
     }
     
-    enum TabPanel {
+    enum BottomTabPanel {
         static let height: CGFloat = 30.0
+        static let width = screenWidth - (2 * horizontalInset)
         static let horizontalInset: CGFloat = 130.0
         static let defaultTabWidth: CGFloat = 100.0
         static let tabApposition: CGFloat = 7.0

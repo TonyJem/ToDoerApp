@@ -21,30 +21,24 @@ class TabPanelView: UIView {
     // MARK: - Private Methods
     private func setupTabs() {
         
-        var index = 0
-        var x: CGFloat = 0.0
+        let panelWidth = Constants.BottomTabPanel.width
+        let tabApposition = Constants.BottomTabPanel.tabApposition
+        let averageTabWidth = (panelWidth - tabApposition) / CGFloat(tabCount) + tabApposition
+        let defaultTabWidth = Constants.BottomTabPanel.defaultTabWidth
+        let tabWidth = min(averageTabWidth, defaultTabWidth)
         
-        let panelWidth = Constants.Layout.screenWidth - (2 * Constants.TabPanel.horizontalInset)
-        
-        let apposition = Constants.TabPanel.tabApposition
-        
-        print("🟢 panelWidth: \(panelWidth)")
-        
-        let averageW = ((panelWidth - CGFloat(tabCount - 1) * apposition) / CGFloat(tabCount))
-        
-        
-//    width: Constants.TabPanel.defaultTabWidth
-        
+        var tabIndex = 0
+        var x: CGFloat = .zero
         repeat {
             let tab = BottomTab()
             tab.frame = CGRect(x: x,
-                               y: 0,
-                               width: averageW,
-                               height: Constants.TabPanel.height)
+                               y: .zero,
+                               width: tabWidth,
+                               height: Constants.BottomTabPanel.height)
             addSubview(tab)
-            index = index + 1
-            x = x + averageW - apposition
-        } while index < tabCount
+            tabIndex += 1
+            x = x + tabWidth - tabApposition
+        } while tabIndex < tabCount
         
     }
 }

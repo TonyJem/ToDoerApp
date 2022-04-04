@@ -66,11 +66,11 @@ extension FooterView {
         
         NSLayoutConstraint.activate([
             tabPanelView.leadingAnchor.constraint(equalTo: leadingAnchor,
-                                                  constant: Constants.TabPanel.horizontalInset),
+                                                  constant: Constants.BottomTabPanel.horizontalInset),
             tabPanelView.topAnchor.constraint(equalTo: topAnchor),
             tabPanelView.trailingAnchor.constraint(equalTo: trailingAnchor,
-                                                   constant: -1 * Constants.TabPanel.horizontalInset),
-            tabPanelView.heightAnchor.constraint(equalToConstant: Constants.TabPanel.height)
+                                                   constant: -1 * Constants.BottomTabPanel.horizontalInset),
+            tabPanelView.heightAnchor.constraint(equalToConstant: Constants.BottomTabPanel.height)
         ])
         
         NSLayoutConstraint.activate([
