@@ -1,6 +1,6 @@
 import UIKit
 
-class BottomTabButton: UIButton {
+class BottomTab: UIButton {
     
     var tabModel = Tab(title: "JAN", defaultColor: .tabBackroundMonth01)
     
@@ -36,7 +36,7 @@ class BottomTabButton: UIButton {
 }
 
 // MARK: - Draw shape of Trapezium with rounded corners
-extension BottomTabButton {
+extension BottomTab {
     override func draw(_ rect: CGRect) {
         let size = self.bounds.size
         

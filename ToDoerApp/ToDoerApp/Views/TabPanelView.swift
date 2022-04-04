@@ -2,8 +2,8 @@ import UIKit
 
 class TabPanelView: UIView {
     
-    private let bottomTabButton = BottomTabButton()
-    private let bottomTabButton02 = BottomTabButton()
+    private let bottomTab1 = BottomTab()
+    private let bottomTab2 = BottomTab()
     
     // MARK: - Init
     override init(frame: CGRect) {
@@ -22,8 +22,8 @@ class TabPanelView: UIView {
     
     // MARK: - Private Methods
     private func setupViews() {
-        addSubview(bottomTabButton)
-        addSubview(bottomTabButton02)
+        addSubview(bottomTab1)
+        addSubview(bottomTab2)
     }
 }
 
@@ -32,18 +32,18 @@ extension TabPanelView {
     private func setConstraints() {
         
         NSLayoutConstraint.activate([
-            bottomTabButton.leadingAnchor.constraint(equalTo: leadingAnchor),
-            bottomTabButton.topAnchor.constraint(equalTo: topAnchor),
-            bottomTabButton.widthAnchor.constraint(equalToConstant: 100),
-            bottomTabButton.bottomAnchor.constraint(equalTo: bottomAnchor)
+            bottomTab1.leadingAnchor.constraint(equalTo: leadingAnchor),
+            bottomTab1.topAnchor.constraint(equalTo: topAnchor),
+            bottomTab1.widthAnchor.constraint(equalToConstant: 100),
+            bottomTab1.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
         
         NSLayoutConstraint.activate([
-            bottomTabButton02.leadingAnchor.constraint(equalTo: bottomTabButton.trailingAnchor,
+            bottomTab2.leadingAnchor.constraint(equalTo: bottomTab1.trailingAnchor,
                                                        constant: -7),
-            bottomTabButton02.topAnchor.constraint(equalTo: topAnchor),
-            bottomTabButton02.widthAnchor.constraint(equalToConstant: 100),
-            bottomTabButton02.bottomAnchor.constraint(equalTo: bottomAnchor)
+            bottomTab2.topAnchor.constraint(equalTo: topAnchor),
+            bottomTab2.widthAnchor.constraint(equalToConstant: 100),
+            bottomTab2.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
         
     }
