@@ -1,18 +1,24 @@
 import UIKit
 
+protocol BottomTabDelegate: AnyObject {
+    func tabDidSelect(id: Int)
+}
+
 class BottomTab: UIButton {
     
-    var tabModel: Tab
+    var tab: Tab
+    
+    weak var bottomTabDelegate: BottomTabDelegate?
     
     // MARK: - Init
-    init(frame: CGRect, tabModel: Tab) {
-        self.tabModel = tabModel
+    init(frame: CGRect, tab: Tab) {
+        self.tab = tab
         
         super.init(frame: frame)
         
         backgroundColor = .clear
         setTitleColor(.gray, for: .normal)
-        setTitle(tabModel.title, for: .normal)
+        setTitle(tab.title, for: .normal)
         addTarget(self, action: #selector(bottomTabButtonDidTap), for: .touchUpInside)
     }
     
@@ -22,11 +28,13 @@ class BottomTab: UIButton {
     
     // MARK: - Actions
     @objc private func bottomTabButtonDidTap() {
-        tabModel.isActive = !tabModel.isActive
-        if tabModel.isActive {
-            superview?.bringSubviewToFront(self)
-        }
-        reloadTabLayer()
+        
+//        tabModel.isActive = true
+//        superview?.bringSubviewToFront(self)
+        bottomTabDelegate?.tabDidSelect(id: tab.id)
+//
+//        reloadTabLayer()
+        
     }
     
     // MARK: - Public Methods
@@ -42,7 +50,7 @@ extension BottomTab {
         let size = self.bounds.size
         
         let W = size.width
-        let H = tabModel.isActive ? size.height : size.height - 3
+        let H = tab.isActive ? size.height : size.height - 3
         
         let k: CGFloat = Constants.TabShape.sideAlignmentProportion
         let R: CGFloat = Constants.TabShape.tabCornerRadius
@@ -98,7 +106,7 @@ extension BottomTab {
         
         path.close()
         
-        tabModel.backgroundColor.set()
+        tab.backgroundColor.set()
         path.fill()
     }
 }
