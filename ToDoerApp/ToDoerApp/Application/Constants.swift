@@ -27,5 +27,7 @@ struct Constants {
     enum TabPanel {
         static let height: CGFloat = 30.0
         static let horizontalInset: CGFloat = 130.0
+        static let defaultTabWidth: CGFloat = 100.0
+        static let tabApposition: CGFloat = 7.0
     }
 }

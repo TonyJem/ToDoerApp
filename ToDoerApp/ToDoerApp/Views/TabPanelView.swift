@@ -34,17 +34,16 @@ extension TabPanelView {
         NSLayoutConstraint.activate([
             bottomTab1.leadingAnchor.constraint(equalTo: leadingAnchor),
             bottomTab1.topAnchor.constraint(equalTo: topAnchor),
-            bottomTab1.widthAnchor.constraint(equalToConstant: 100),
+            bottomTab1.widthAnchor.constraint(equalToConstant: Constants.TabPanel.defaultTabWidth),
             bottomTab1.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
         
         NSLayoutConstraint.activate([
             bottomTab2.leadingAnchor.constraint(equalTo: bottomTab1.trailingAnchor,
-                                                       constant: -7),
+                                                constant: -1 * Constants.TabPanel.tabApposition),
             bottomTab2.topAnchor.constraint(equalTo: topAnchor),
-            bottomTab2.widthAnchor.constraint(equalToConstant: 100),
+            bottomTab2.widthAnchor.constraint(equalToConstant: Constants.TabPanel.defaultTabWidth),
             bottomTab2.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
-        
     }
 }
