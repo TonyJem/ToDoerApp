@@ -2,7 +2,16 @@ import UIKit
 
 class TabPanelView: UIView {
     
-    var model = tabModel()
+    private let model = tabModel()
+    private let tabApposition = Constants.BottomTabPanel.tabApposition
+    
+    private var tabWidth: CGFloat {
+        let panelWidth = Constants.BottomTabPanel.width
+        let averageTabWidth = (panelWidth - tabApposition) / CGFloat(model.fetchAllTabs().count) + Constants.BottomTabPanel.tabApposition
+        let defaultTabWidth = Constants.BottomTabPanel.defaultTabWidth
+        let tabWidth = min(averageTabWidth, defaultTabWidth)
+        return tabWidth
+    }
     
     // MARK: - Init
     override init(frame: CGRect) {
@@ -18,21 +27,12 @@ class TabPanelView: UIView {
     
     // MARK: - Private Methods
     private func setupTabs() {
-        let tabs = model.fetchAllTabs()
-        let panelWidth = Constants.BottomTabPanel.width
-        let tabApposition = Constants.BottomTabPanel.tabApposition
-        let averageTabWidth = (panelWidth - tabApposition) / CGFloat(tabs.count) + tabApposition
-        let defaultTabWidth = Constants.BottomTabPanel.defaultTabWidth
-        let tabWidth = min(averageTabWidth, defaultTabWidth)
-        
         var x: CGFloat = .zero
-        for (index, tab) in tabs.enumerated() {
-            
+        for (index, tab) in model.fetchAllTabs().enumerated() {
             let frame: CGRect = CGRect(x: x,
                                        y: .zero,
                                        width: tabWidth,
                                        height: Constants.BottomTabPanel.height)
-            
             let tabView = BottomTab(frame: frame, tab: tab, index: index)
             tabView.bottomTabDelegate = self
             x = x + tabWidth - tabApposition
