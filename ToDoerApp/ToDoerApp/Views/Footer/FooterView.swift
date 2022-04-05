@@ -12,7 +12,7 @@ class FooterView: UIView {
         return button
     }()
     
-    private let tabPanelView = TabPanelView()
+    private let tabPanelView = bottomTabPanelView()
     
     private lazy var showCalendarsButton: UIButton = {
         let button = UIButton()

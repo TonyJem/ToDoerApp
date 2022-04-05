@@ -3,7 +3,7 @@ import UIKit
 class HeaderView: UIView {
     
     // MARK: - Views
-    private let tabPanelView = TabPanelView()
+    private let tabPanelView = bottomTabPanelView()
     
     // MARK: - Init
     override init(frame: CGRect) {
