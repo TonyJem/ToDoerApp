@@ -1,6 +1,6 @@
 import UIKit
 
-class bottomTabPanelView: UIView {
+class BottomTabPanelView: UIView {
     
     private let model = tabModel()
     private let tabApposition = Constants.BottomTabPanel.tabApposition
@@ -45,7 +45,7 @@ class bottomTabPanelView: UIView {
 }
 
 // MARK: - BottomTab Delegate
-extension bottomTabPanelView: BottomTabDelegate {
+extension BottomTabPanelView: BottomTabDelegate {
     func tabDidSelect(index: Int) {
         let recentlySelectedTabIndex = model.activeTabIndex
         guard index != recentlySelectedTabIndex else { return }
