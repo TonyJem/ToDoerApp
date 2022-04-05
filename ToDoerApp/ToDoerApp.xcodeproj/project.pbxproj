@@ -82,11 +82,8 @@
 		3A56E5EF27F88ECB0094E79A /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				3A56E5E827F80B8E0094E79A /* MainView.swift */,
-				3A56E5EA27F80F640094E79A /* MainViewCell.swift */,
-				3A56E5F027F88F410094E79A /* FooterView.swift */,
-				3AD65D6127FB0A1700F91CB2 /* TabPanelView.swift */,
-				3A56E5F227F8A8320094E79A /* BottomTab.swift */,
+				3AD65D6427FC670000F91CB2 /* Main */,
+				3AD65D6327FC66E200F91CB2 /* Footer */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -134,6 +131,25 @@
 				3AD65D5E27FA294C00F91CB2 /* UIColor + Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		3AD65D6327FC66E200F91CB2 /* Footer */ = {
+			isa = PBXGroup;
+			children = (
+				3A56E5F027F88F410094E79A /* FooterView.swift */,
+				3AD65D6127FB0A1700F91CB2 /* TabPanelView.swift */,
+				3A56E5F227F8A8320094E79A /* BottomTab.swift */,
+			);
+			path = Footer;
+			sourceTree = "<group>";
+		};
+		3AD65D6427FC670000F91CB2 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				3A56E5E827F80B8E0094E79A /* MainView.swift */,
+				3A56E5EA27F80F640094E79A /* MainViewCell.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
