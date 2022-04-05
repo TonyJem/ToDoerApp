@@ -22,6 +22,7 @@
 		3AD65D6227FB0A1700F91CB2 /* BottomTabPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD65D6127FB0A1700F91CB2 /* BottomTabPanelView.swift */; };
 		3AD65D6627FC689100F91CB2 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD65D6527FC689100F91CB2 /* HeaderView.swift */; };
 		3AD65D6927FC6B3A00F91CB2 /* TopTabPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD65D6827FC6B3A00F91CB2 /* TopTabPanelView.swift */; };
+		3AD65D6B27FC6E8800F91CB2 /* TopTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD65D6A27FC6E8800F91CB2 /* TopTab.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		3AD65D6127FB0A1700F91CB2 /* BottomTabPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomTabPanelView.swift; sourceTree = "<group>"; };
 		3AD65D6527FC689100F91CB2 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		3AD65D6827FC6B3A00F91CB2 /* TopTabPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTabPanelView.swift; sourceTree = "<group>"; };
+		3AD65D6A27FC6E8800F91CB2 /* TopTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTab.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +164,7 @@
 			children = (
 				3AD65D6527FC689100F91CB2 /* HeaderView.swift */,
 				3AD65D6827FC6B3A00F91CB2 /* TopTabPanelView.swift */,
+				3AD65D6A27FC6E8800F91CB2 /* TopTab.swift */,
 			);
 			path = Header;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 				3A56E5F127F88F410094E79A /* FooterView.swift in Sources */,
 				3A960A8327F761D1008F9A01 /* MainViewController.swift in Sources */,
 				3AD65D6227FB0A1700F91CB2 /* BottomTabPanelView.swift in Sources */,
+				3AD65D6B27FC6E8800F91CB2 /* TopTab.swift in Sources */,
 				3A56E5E927F80B8E0094E79A /* MainView.swift in Sources */,
 				3A960A7F27F761D1008F9A01 /* AppDelegate.swift in Sources */,
 				3AD65D6627FC689100F91CB2 /* HeaderView.swift in Sources */,
