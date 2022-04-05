@@ -3,7 +3,7 @@ import UIKit
 class HeaderView: UIView {
     
     // MARK: - Views
-    private let tabPanelView = bottomTabPanelView()
+    private let tabPanelView = TopTabPanelView()
     
     // MARK: - Init
     override init(frame: CGRect) {
@@ -32,11 +32,11 @@ extension HeaderView {
         
         NSLayoutConstraint.activate([
             tabPanelView.leadingAnchor.constraint(equalTo: leadingAnchor,
-                                                  constant: Constants.BottomTabPanel.horizontalInset),
-            tabPanelView.topAnchor.constraint(equalTo: topAnchor),
+                                                  constant: Constants.TopTabPanel.horizontalInset),
+            tabPanelView.bottomAnchor.constraint(equalTo: bottomAnchor),
             tabPanelView.trailingAnchor.constraint(equalTo: trailingAnchor,
-                                                   constant: -1 * Constants.BottomTabPanel.horizontalInset),
-            tabPanelView.heightAnchor.constraint(equalToConstant: Constants.BottomTabPanel.height)
+                                                   constant: -1 * Constants.TopTabPanel.horizontalInset),
+            tabPanelView.heightAnchor.constraint(equalToConstant: Constants.TopTabPanel.height)
         ])
         
     }

@@ -26,6 +26,12 @@ struct Constants {
         static let tabCornerRadius: CGFloat = 10.0
     }
     
+    enum TopTabPanel {
+        static let height: CGFloat = 30.0
+        static let horizontalInset: CGFloat = 315.0
+        static let tabApposition: CGFloat = 7.0
+    }
+    
     enum BottomTabPanel {
         static let height: CGFloat = 30.0
         static let width = screenWidth - (2 * horizontalInset)
