@@ -3,14 +3,7 @@ import UIKit
 class MainViewController: UIViewController {
     
     // MARK: - Views
-    private let headerView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .gray
-        
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    
+    private let headerView = HeaderView()
     private let mainView = MainView()
     private let footerView = FooterView()
     
