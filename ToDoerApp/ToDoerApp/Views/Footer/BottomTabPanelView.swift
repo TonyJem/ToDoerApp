@@ -2,7 +2,7 @@ import UIKit
 
 class BottomTabPanelView: UIView {
     
-    private let model = tabModel()
+    private let model = BottomTabModel()
     private let tabApposition = Constants.BottomTabPanel.tabApposition
     
     private var tabViews: [BottomTab] = []

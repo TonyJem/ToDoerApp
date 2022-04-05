@@ -1,4 +1,3 @@
-import Foundation
 import UIKit
 
 struct Tab {
@@ -13,7 +12,7 @@ struct Tab {
     }
 }
 
-class tabModel {
+class BottomTabModel {
     
     var activeTabIndex = 0
     

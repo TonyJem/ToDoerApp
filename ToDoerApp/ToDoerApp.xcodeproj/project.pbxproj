@@ -23,6 +23,7 @@
 		3AD65D6627FC689100F91CB2 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD65D6527FC689100F91CB2 /* HeaderView.swift */; };
 		3AD65D6927FC6B3A00F91CB2 /* TopTabPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD65D6827FC6B3A00F91CB2 /* TopTabPanelView.swift */; };
 		3AD65D6B27FC6E8800F91CB2 /* TopTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD65D6A27FC6E8800F91CB2 /* TopTab.swift */; };
+		3AD65D6D27FCB17400F91CB2 /* TopTabModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD65D6C27FCB17400F91CB2 /* TopTabModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		3AD65D6527FC689100F91CB2 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		3AD65D6827FC6B3A00F91CB2 /* TopTabPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTabPanelView.swift; sourceTree = "<group>"; };
 		3AD65D6A27FC6E8800F91CB2 /* TopTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTab.swift; sourceTree = "<group>"; };
+		3AD65D6C27FCB17400F91CB2 /* TopTabModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTabModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				3AD65D5B27FA1FA400F91CB2 /* Tab.swift */,
+				3AD65D6C27FCB17400F91CB2 /* TopTabModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 				3AD65D6927FC6B3A00F91CB2 /* TopTabPanelView.swift in Sources */,
 				3A960A8127F761D1008F9A01 /* SceneDelegate.swift in Sources */,
 				3AD65D5C27FA1FA400F91CB2 /* Tab.swift in Sources */,
+				3AD65D6D27FCB17400F91CB2 /* TopTabModel.swift in Sources */,
 				3A56E5ED27F8592C0094E79A /* Constants.swift in Sources */,
 				3A56E5F327F8A8320094E79A /* BottomTab.swift in Sources */,
 			);
