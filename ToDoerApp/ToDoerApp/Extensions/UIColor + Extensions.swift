@@ -18,9 +18,9 @@ extension UIColor {
     static let tabBackroundMonth11 = #colorLiteral(red: 0.8982815146, green: 0.7177738547, blue: 0.4335058331, alpha: 0.95)
     static let tabBackroundMonth12 = #colorLiteral(red: 0.716798842, green: 0.7022868991, blue: 0.8889499307, alpha: 0.95)
     
-    static let tabDayBackround = #colorLiteral(red: 0.3395130634, green: 0.788874507, blue: 0.5583910942, alpha: 1)
-    static let tabWeekBackround = #colorLiteral(red: 0.8734501004, green: 0.7810484767, blue: 0.3841074407, alpha: 1)
-    static let tabMonthBackround = #colorLiteral(red: 0.8773200512, green: 0.3512092829, blue: 0.3553160429, alpha: 1)
-    static let tabTasksBackround = #colorLiteral(red: 0.6247070432, green: 0.6227830648, blue: 0.8777037263, alpha: 1)
-    static let tabNotesBackround = #colorLiteral(red: 0.6700514555, green: 0.4293835759, blue: 0.7688273191, alpha: 1)
+    static let tabDayBackround = #colorLiteral(red: 0.3395130634, green: 0.788874507, blue: 0.5583910942, alpha: 0.95)
+    static let tabWeekBackround = #colorLiteral(red: 0.8734501004, green: 0.7810484767, blue: 0.3841074407, alpha: 0.95)
+    static let tabMonthBackround = #colorLiteral(red: 0.8773200512, green: 0.3512092829, blue: 0.3553160429, alpha: 0.95)
+    static let tabTasksBackround = #colorLiteral(red: 0.6247070432, green: 0.6227830648, blue: 0.8777037263, alpha: 0.95)
+    static let tabNotesBackround = #colorLiteral(red: 0.6700514555, green: 0.4293835759, blue: 0.7688273191, alpha: 0.95)
 }
