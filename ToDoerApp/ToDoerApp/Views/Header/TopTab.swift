@@ -58,7 +58,7 @@ extension TopTab {
         let Pi = CGFloat.pi
         
         let Ax: CGFloat = .zero
-        let Ay: CGFloat = .zero
+        let Ay: CGFloat = size.height
         
         let Ox = Ax + 0.5 * W
         let Oy = Ay
@@ -73,8 +73,8 @@ extension TopTab {
         let FG = k * H
         let EG = EF + FG
         
-        let C1x = Ox + 0.5 * W - FG - EF
-        let C1y = Oy + H - R
+        let C1x = Bx - EG
+        let C1y = Oy - H + R
         
         let OB = Bx - Ox
         let OC1x = OB - EG
@@ -95,15 +95,15 @@ extension TopTab {
         
         path.addArc(withCenter: C1,
                     radius: R,
-                    startAngle: alfa,
-                    endAngle: 0.5 * Pi,
-                    clockwise: true)
+                    startAngle: -1 * alfa,
+                    endAngle: 3 * Pi / 2,
+                    clockwise: false)
         
         path.addArc(withCenter: C2,
                     radius: R,
-                    startAngle: 0.5 * Pi,
-                    endAngle: Pi - alfa,
-                    clockwise: true)
+                    startAngle: 3 * Pi / 2,
+                    endAngle: Pi + alfa,
+                    clockwise: false)
         
         path.close()
         

@@ -35,7 +35,7 @@ extension TopTabPanelView {
     private func setConstraints() {
         
         NSLayoutConstraint.activate([
-            tabView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            tabView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 200),
             tabView.bottomAnchor.constraint(equalTo: bottomAnchor),
             tabView.widthAnchor.constraint(equalToConstant: 100),
             tabView.heightAnchor.constraint(equalToConstant: Constants.TopTabPanel.height)
