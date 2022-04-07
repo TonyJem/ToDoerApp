@@ -1,10 +1,6 @@
-import Foundation
-
-class TopTabModel {
+class TopTabModel: TabModel {
     
-    var activeTabIndex = 0
-    
-    private var tabsDB: [Tab] = [
+    private var topTabsDB: [Tab] = [
         Tab(title: "Day", defaultColor: .tabDayBackround),
         Tab(title: "Week", defaultColor: .tabWeekBackround),
         Tab(title: "Month", defaultColor: .tabMonthBackround),
@@ -12,17 +8,10 @@ class TopTabModel {
         Tab(title: "Notes", defaultColor: .tabNotesBackround)
     ]
     
-    init() {
-        tabsDB[activeTabIndex].isActive = true
-    }
-    
-    func tabs() -> [Tab] {
-        tabsDB
-    }
-    
-    func activateTab(by index: Int) {
-        tabsDB[activeTabIndex].isActive = false
-        tabsDB[index].isActive = true
-        activeTabIndex = index
+    override init() {
+        super.init()
+        
+        topTabsDB[activeTabIndex].isActive = true
+        self.tabsDB = topTabsDB
     }
 }

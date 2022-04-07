@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A3F82D927FF57A900A6BEF7 /* BottomTabModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3F82D827FF57A900A6BEF7 /* BottomTabModel.swift */; };
 		3A56E5E927F80B8E0094E79A /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A56E5E827F80B8E0094E79A /* MainView.swift */; };
 		3A56E5EB27F80F640094E79A /* MainViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A56E5EA27F80F640094E79A /* MainViewCell.swift */; };
 		3A56E5ED27F8592C0094E79A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A56E5EC27F8592C0094E79A /* Constants.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A3F82D827FF57A900A6BEF7 /* BottomTabModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomTabModel.swift; sourceTree = "<group>"; };
 		3A56E5E827F80B8E0094E79A /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		3A56E5EA27F80F640094E79A /* MainViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewCell.swift; sourceTree = "<group>"; };
 		3A56E5EC27F8592C0094E79A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 			children = (
 				3AD65D5B27FA1FA400F91CB2 /* Tab.swift */,
 				3AD65D6C27FCB17400F91CB2 /* TopTabModel.swift */,
+				3A3F82D827FF57A900A6BEF7 /* BottomTabModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 				3AD65D6627FC689100F91CB2 /* HeaderView.swift in Sources */,
 				3AD65D6927FC6B3A00F91CB2 /* TopTabPanelView.swift in Sources */,
 				3A960A8127F761D1008F9A01 /* SceneDelegate.swift in Sources */,
+				3A3F82D927FF57A900A6BEF7 /* BottomTabModel.swift in Sources */,
 				3AD65D5C27FA1FA400F91CB2 /* Tab.swift in Sources */,
 				3AD65D6D27FCB17400F91CB2 /* TopTabModel.swift in Sources */,
 				3A56E5ED27F8592C0094E79A /* Constants.swift in Sources */,

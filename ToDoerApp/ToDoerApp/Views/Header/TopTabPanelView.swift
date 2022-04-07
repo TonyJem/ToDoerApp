@@ -33,8 +33,8 @@ class TopTabPanelView: UIStackView {
     }
 }
 
-// MARK: - BottomTab Delegate
-extension TopTabPanelView: BottomTabDelegate {
+// MARK: - TopTab Delegate
+extension TopTabPanelView: TopTabDelegate {
     func tabDidSelect(index: Int) {
         let recentlySelectedTabIndex = model.activeTabIndex
         guard index != recentlySelectedTabIndex else { return }

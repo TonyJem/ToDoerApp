@@ -14,7 +14,7 @@ class TopTab: UIButton {
         }
     }
     
-    weak var topTabDelegate: BottomTabDelegate?
+    weak var topTabDelegate: TopTabDelegate?
     
     // MARK: - Init
     init(frame: CGRect, tab: Tab, index: Int) {
@@ -26,7 +26,7 @@ class TopTab: UIButton {
         backgroundColor = .clear
         setTitleColor(.gray, for: .normal)
         setTitle(tab.title, for: .normal)
-        addTarget(self, action: #selector(bottomTabButtonDidTap), for: .touchUpInside)
+        addTarget(self, action: #selector(topTabButtonDidTap), for: .touchUpInside)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -34,7 +34,7 @@ class TopTab: UIButton {
     }
     
     // MARK: - Actions
-    @objc private func bottomTabButtonDidTap() {
+    @objc private func topTabButtonDidTap() {
         topTabDelegate?.tabDidSelect(index: index)
     }
     
