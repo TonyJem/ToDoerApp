@@ -16,15 +16,11 @@ class TabModel {
     
     var activeTabIndex = 0
     
-    var tabsDB: [Tab] = []
-    
-    func tabs() -> [Tab] {
-        tabsDB
-    }
+    var tabs: [Tab] = []
     
     func activateTab(by index: Int) {
-        tabsDB[activeTabIndex].isActive = false
-        tabsDB[index].isActive = true
+        tabs[activeTabIndex].isActive = false
+        tabs[index].isActive = true
         activeTabIndex = index
     }
 }

@@ -2,7 +2,7 @@ import Foundation
 
 class BottomTabModel: TabModel {
     
-    var bottomTabsDB: [Tab] = [
+    var bottomTabs: [Tab] = [
         Tab(title: "JAN", defaultColor: .tabBackroundMonth01),
         Tab(title: "FEB", defaultColor: .tabBackroundMonth02),
         Tab(title: "MAR", defaultColor: .tabBackroundMonth03),
@@ -20,7 +20,7 @@ class BottomTabModel: TabModel {
     override init() {
         super.init()
         
-        bottomTabsDB[activeTabIndex].isActive = true
-        self.tabsDB = bottomTabsDB
+        bottomTabs[activeTabIndex].isActive = true
+        self.tabs = bottomTabs
     }
 }

@@ -1,6 +1,6 @@
 class TopTabModel: TabModel {
     
-    private var topTabsDB: [Tab] = [
+    private var topTabs: [Tab] = [
         Tab(title: "Day", defaultColor: .tabDayBackround),
         Tab(title: "Week", defaultColor: .tabWeekBackround),
         Tab(title: "Month", defaultColor: .tabMonthBackround),
@@ -11,7 +11,7 @@ class TopTabModel: TabModel {
     override init() {
         super.init()
         
-        topTabsDB[activeTabIndex].isActive = true
-        self.tabsDB = topTabsDB
+        topTabs[activeTabIndex].isActive = true
+        self.tabs = topTabs
     }
 }

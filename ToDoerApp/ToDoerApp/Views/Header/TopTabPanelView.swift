@@ -24,7 +24,7 @@ class TopTabPanelView: UIStackView {
     
     // MARK: - Private Methods
     private func setupTabs() {
-        for (index, tab) in model.tabs().enumerated() {
+        for (index, tab) in model.tabs.enumerated() {
             let tabView = TopTab(frame: .zero, tab: tab, index: index)
             tabView.topTabDelegate = self
             addArrangedSubview(tabView)
@@ -39,7 +39,7 @@ extension TopTabPanelView: TopTabDelegate {
         let recentlySelectedTabIndex = model.activeTabIndex
         guard index != recentlySelectedTabIndex else { return }
         model.activateTab(by: index)
-        tabViews[index].tab = model.tabs()[index]
-        tabViews[recentlySelectedTabIndex].tab = model.tabs()[recentlySelectedTabIndex]
+        tabViews[index].tab = model.tabs[index]
+        tabViews[recentlySelectedTabIndex].tab = model.tabs[recentlySelectedTabIndex]
     }
 }

@@ -9,7 +9,7 @@ class BottomTabPanelView: UIView {
     
     private var tabWidth: CGFloat {
         let panelWidth = Constants.BottomTabPanel.width
-        let averageTabWidth = (panelWidth - tabApposition) / CGFloat(model.tabs().count) + tabApposition
+        let averageTabWidth = (panelWidth - tabApposition) / CGFloat(model.tabs.count) + tabApposition
         let defaultTabWidth = Constants.BottomTabPanel.defaultTabWidth
         let tabWidth = min(averageTabWidth, defaultTabWidth)
         return tabWidth
@@ -30,7 +30,7 @@ class BottomTabPanelView: UIView {
     // MARK: - Private Methods
     private func setupTabs() {
         var x: CGFloat = .zero
-        for (index, tab) in model.tabs().enumerated() {
+        for (index, tab) in model.tabs.enumerated() {
             let frame: CGRect = CGRect(x: x,
                                        y: .zero,
                                        width: tabWidth,
@@ -50,7 +50,7 @@ extension BottomTabPanelView: BottomTabDelegate {
         let recentlySelectedTabIndex = model.activeTabIndex
         guard index != recentlySelectedTabIndex else { return }
         model.activateTab(by: index)
-        tabViews[index].tab = model.tabs()[index]
-        tabViews[recentlySelectedTabIndex].tab = model.tabs()[recentlySelectedTabIndex]
+        tabViews[index].tab = model.tabs[index]
+        tabViews[recentlySelectedTabIndex].tab = model.tabs[recentlySelectedTabIndex]
     }
 }
