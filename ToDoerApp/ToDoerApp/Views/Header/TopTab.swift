@@ -1,7 +1,7 @@
 import UIKit
 
 protocol TopTabDelegate: AnyObject {
-    func tabDidSelect(index: Int)
+    func didSelectTabAt(index: Int)
 }
 
 class TopTab: UIButton {
@@ -35,7 +35,7 @@ class TopTab: UIButton {
     
     // MARK: - Actions
     @objc private func topTabButtonDidTap() {
-        topTabDelegate?.tabDidSelect(index: index)
+        topTabDelegate?.didSelectTabAt(index: index)
     }
     
     // MARK: - Private Methods
